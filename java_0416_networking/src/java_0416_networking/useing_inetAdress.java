@@ -25,10 +25,10 @@ public class useing_inetAdress {
 	}
 }
 		/*--InetAddress information--
-		CanonicalHostName :125.209.222.142
-		Hostaddress :125.209.222.142
-		HostName :www.naver.com
+		CanonicalHostName :125.209.
+		Hostaddress :125.209.
+		HostName :www.nav
 		--InetAddress information--
-		CanonicalHostName :210.89.160.88
-		Hostaddress :210.89.160.88
-		HostName :www.naver.com*/
+		CanonicalHostName :210.89.
+		Hostaddress :210.89.
+		HostName :www.nav*/
