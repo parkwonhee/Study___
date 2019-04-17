@@ -20,7 +20,7 @@ class test4 {
 		InetAddress add = InetAddress.getByAddress(address);
 		InetAddress name_add = InetAddress.getByAddress("Test.com",address);
 		System.out.println("test4 "+add);
-		System.out.println("test4 "+name_add);//127º¸´Ù Å« °ªÀº À½¼ö·Î³ªÅ¸³»´À°ÍÀ» ¸·±â
+		System.out.println("test4 "+name_add);//127ë³´ë‹¤ í° ê°’ì€ ìŒìˆ˜ë¡œë‚˜íƒ€ë‚´ëŠê²ƒì„ ë§‰ê¸°
 	}
 }
 
@@ -35,7 +35,7 @@ class test5{
 class test6{
 	test6() throws UnknownHostException{
 		InetAddress machine2 = InetAddress.getLocalHost();
-		String host2 = machine2.getCanonicalHostName();  //ÀÓÀÇ·Î Á¤ÇØÁà¾ßÁö ´Ù¸¥°ªÀÌ ³ª¿Â´Ù
+		String host2 = machine2.getCanonicalHostName();  //ì„ì˜ë¡œ ì •í•´ì¤˜ì•¼ì§€ ë‹¤ë¥¸ê°’ì´ ë‚˜ì˜¨ë‹¤
 		System.out.println("test6() " +host2);
 	}
 }
@@ -83,18 +83,18 @@ public class Testdomain {
 		InetAddress[] address2 = InetAddress.getAllByName("www.naver.com");
 		for(InetAddress add: address2)
 		System.out.println("address2 "+add);
-		//address2www.naver.com/125.209.222.141
-		//address2www.naver.com/125.209.222.142
+		//address2www.naver.com/125.
+		//address2www.naver.com/125.
 		
-		test3 t3 = new test3();   //test3 LAPTOP-AGRVT26J/172.30.33.35
+		test3 t3 = new test3();   //test3 LAPTOP/172
 		test4 t4 = new test4();   //test4 Test.com/107.23.216.196
-		test5 t5 = new test5();   //test5() LAPTOP-AGRVT26J
-		test6 t6 = new test6();   //test6() LAPTOP-AGRVT26J
-		test7 t7 = new test7();   //test7() 172.30.33.35
+		test5 t5 = new test5();   //test5() LAPTOP
+		test6 t6 = new test6();   //test6() LAPTOP
+		test7 t7 = new test7();   //test7() 172.30.5
 		test8 t8 = new test8();   
 		/*test8() [B@70dea4e
-		test9() 125 -47 -34 -114 
-		test10() 125 209 222 142 
-		test11() 125 209 222 142*/
+		test9() 125 -47 
+		test10() 125 209 
+		test11() 125 209 */
 	}
 }
