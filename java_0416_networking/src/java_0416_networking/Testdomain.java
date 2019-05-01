@@ -20,7 +20,7 @@ class test4 {
 		InetAddress add = InetAddress.getByAddress(address);
 		InetAddress name_add = InetAddress.getByAddress("Test.com",address);
 		System.out.println("test4 "+add);
-		System.out.println("test4 "+name_add);//127보다 큰 값은 음수로나타내느것을 막기
+		System.out.println("test4 "+name_add);//
 	}
 }
 
@@ -35,7 +35,7 @@ class test5{
 class test6{
 	test6() throws UnknownHostException{
 		InetAddress machine2 = InetAddress.getLocalHost();
-		String host2 = machine2.getCanonicalHostName();  //임의로 정해줘야지 다른값이 나온다
+		String host2 = machine2.getCanonicalHostName();  
 		System.out.println("test6() " +host2);
 	}
 }
@@ -86,7 +86,7 @@ public class Testdomain {
 		//address2www.naver.com/125.
 		//address2www.naver.com/125.
 		
-		test3 t3 = new test3();   //test3 LAPTOP/172
+		test3 t3 = new test3();   //test3 LAPTOP/172.3
 		test4 t4 = new test4();   //test4 Test.com/107.23.216.196
 		test5 t5 = new test5();   //test5() LAPTOP
 		test6 t6 = new test6();   //test6() LAPTOP
