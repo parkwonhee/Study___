@@ -1,1 +1,1 @@
-# java_algorithm
+# 공부합시다
