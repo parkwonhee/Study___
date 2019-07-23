@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <title>comCod0210e</title>
+    <screen std:sid="screen-e169805d" id="smuis" height="680px" minwidth="1320px" name="smuis" width="1320px"/>
+    <screen std:sid="screen-50f2a1d9" id="default" height="768px" maxwidth="1319px" minwidth="1024px" name="default" width="1024px"/>
+    <screen std:sid="screen-81a7ec1b" id="tablet" height="667px" maxwidth="1023px" minwidth="500px" name="tablet" width="500px"/>
+    <screen std:sid="screen-16f8c35b" id="mobile" height="525px" maxwidth="499px" name="mobile" width="350px"/>
+    <cl:model std:sid="model-00e022fe">
+      <cl:dataset std:sid="" id="dscomCodList">
+        <cl:datacolumnlist>
+          <cl:datacolumn name="COM_CD_DIV"/>
+          <cl:datacolumn name="COM_NM_KOR"/>
+          <cl:datacolumn name="COM_NM_ENG"/>
+          <cl:datacolumn name="COM_ALIAS_KOR1"/>
+          <cl:datacolumn name="GROUP_CD"/>
+          <cl:datacolumn name="SYSTEM_YN"/>
+          <cl:datacolumn name="COM_ALIAS_ENGI"/>
+          <cl:datacolumn name="WORKER_YN"/>
+          <cl:datacolumn name="DIV_CNT"/>
+        </cl:datacolumnlist>
+      </cl:dataset>
+      <cl:submission std:sid="" id="subOnload" action="/comCod0210e/onLoad.do">
+        <cl:responsedata dataid="dslist"/>
+      </cl:submission>
+      <cl:dataset std:sid="" id="dslist">
+        <cl:datacolumnlist>
+          <cl:datacolumn name="COM_NM_KOR"/>
+          <cl:datacolumn name="COM_CD"/>
+        </cl:datacolumnlist>
+      </cl:dataset>
+      <cl:submission std:sid="submission-75766786" id="subList" action="/comCod0210e/list.do">
+        <cl:responsedata dataid="dscomCodList"/>
+      </cl:submission>
+    </cl:model>
+    <cl:appspec/>
+  </head>
+  <body std:sid="body-6dddd4f8" style="top:0px; left:0px; width:800px; height:600px;">
+    <cl:listener std:sid="listener-07890401" handler="onBodyLoad" name="load"/>
+    <cl:grid std:sid="grid-139b0c9c" id="grd1" columnMovable="false" columnResizable="false" datasetid="dscomCodList" readonly="false">
+      <cl:xylayoutdata std:sid="xyl-data-a6cf2b7f" bottom="80px" horizontalAnchor="BOTH" left="20px" right="20px" top="80px" verticalAnchor="BOTH"/>
+      <cl:gridcolumn std:sid="g-column-eb0ee588" width="50px"/>
+      <cl:gridcolumn std:sid="g-column-57419e13"/>
+      <cl:gridcolumn std:sid="g-column-0e301d0e"/>
+      <cl:gridcolumn std:sid="g-column-d8f83fca"/>
+      <cl:gridcolumn std:sid="g-column-a9d76232"/>
+      <cl:gridcolumn std:sid="g-column-13d8cc33"/>
+      <cl:gridheader>
+        <cl:gridrow std:sid="g-row-ef362330"/>
+        <cl:gridcell std:sid="gh-cell-b46a03de" colindex="0" rowindex="0" filterable="false" sortable="false"/>
+        <cl:gridcell std:sid="gh-cell-6fd29c3f" colindex="1" rowindex="0" filterable="false" sortable="false" targetcolumnname="COM_CD_DIV" text="코드"/>
+        <cl:gridcell std:sid="gh-cell-a5a825ab" colindex="2" rowindex="0" filterable="false" sortable="false" targetcolumnname="COM_NM_KOR" text="코드명(한글)"/>
+        <cl:gridcell std:sid="gh-cell-615e4123" colindex="3" rowindex="0" filterable="false" sortable="false" targetcolumnname="COM_NM_ENG" text="관리목적"/>
+        <cl:gridcell std:sid="gh-cell-c33fb7a8" colindex="4" rowindex="0" filterable="false" sortable="false" targetcolumnname="COM_ALIAS_KOR1" text="중요도"/>
+        <cl:gridcell std:sid="gh-cell-a928d33a" colindex="5" rowindex="0" filterable="false" sortable="false" targetcolumnname="GROUP_CD" text="조정허용소속"/>
+      </cl:gridheader>
+      <cl:griddetail>
+        <cl:gridrow std:sid="g-row-7dd3d7b0"/>
+        <cl:gridcell std:sid="gd-cell-7ffded87" colindex="0" rowindex="0" columntype="rowindex"/>
+        <cl:gridcell std:sid="gd-cell-a1bbcb99" colindex="1" rowindex="0" columnname="COM_CD_DIV">
+          <cl:inputbox std:sid="i-box-691a6650" id="ipb14"/>
+        </cl:gridcell>
+        <cl:gridcell std:sid="gd-cell-79e5dc62" colindex="2" rowindex="0" columnname="COM_NM_KOR">
+          <cl:inputbox std:sid="i-box-8c12a723" id="ipb15"/>
+        </cl:gridcell>
+        <cl:gridcell std:sid="gd-cell-c1c4afd4" colindex="3" rowindex="0" columnname="COM_NM_ENG">
+          <cl:inputbox std:sid="i-box-083f1af9" id="ipb16"/>
+        </cl:gridcell>
+        <cl:gridcell std:sid="gd-cell-5b00389e" colindex="4" rowindex="0" columnname="COM_ALIAS_KOR1">
+          <cl:inputbox std:sid="i-box-3a4dd406" id="ipb17"/>
+        </cl:gridcell>
+        <cl:gridcell std:sid="gd-cell-92519654" colindex="5" rowindex="0" columnname="GROUP_CD">
+          <cl:combobox std:sid="c-box-bc843b8a" id="cmb1">
+            <cl:itemset datasetid="dslist" label="COM_NM_KOR" value="COM_CD"/>
+          </cl:combobox>
+        </cl:gridcell>
+      </cl:griddetail>
+    </cl:grid>
+    <cl:button std:sid="button-092c5cb0" id="btnSearch" value="조회">
+      <cl:listener std:sid="listener-fd24f7f2" handler="onBtnSearchClick" name="click"/>
+      <cl:xylayoutdata std:sid="xyl-data-85ac57a1" height="20px" horizontalAnchor="RIGHT" right="50px" top="50px" verticalAnchor="TOP" width="110px"/>
+    </cl:button>
+    <cl:xylayout std:sid="xylayout-a6d27202"/>
+  </body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>
